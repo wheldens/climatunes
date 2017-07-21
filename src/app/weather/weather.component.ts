@@ -12,7 +12,6 @@ export class WeatherComponent implements OnInit {
 
   data: any;
 
-
   constructor(private _weatherService: WeatherService) {
   }
 
@@ -24,5 +23,7 @@ export class WeatherComponent implements OnInit {
 showData(){
   console.log(this.data);
 }
+
+
 
 }
