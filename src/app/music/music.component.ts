@@ -13,6 +13,7 @@ export class MusicComponent implements OnInit {
 
   data: any;
   search: any;
+  albums: Object[];
 
   constructor( private _musicService: MusicService) { }
 
@@ -23,5 +24,7 @@ export class MusicComponent implements OnInit {
 
   showData(){
     console.log(this.data);
+    this.albums = this.data.results.albummatches.album;
+    // if weather word === word from database => show songs
   }
 }

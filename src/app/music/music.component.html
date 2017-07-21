@@ -104,6 +104,20 @@
 
 
 <!-- Added by gigglball!!! -->
+
+<h2>Based on Climatunes, listen to...</h2>
+
+  <tr *ngFor="let tunes of albums">
+    <td>
+      {{tunes.artist}}
+    </td>
+    <td>
+      {{tunes.name}}
+    </td>
+  </tr>
+
+<!-- Added by gigglball!!! -->
+<button (click)="showData()" >music</button>
   <h2>Based on Climatunes, listen to...</h2>
     <ul>
       <!-- <li *ngFor="let tunes of data">
