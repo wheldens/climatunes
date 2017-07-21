@@ -1,30 +1,41 @@
-import { Component, OnInit } from '@angular/core';
+import {Component} from '@angular/core';
 import {MusicService} from '../../assets/services/music.service';
+import {WeatherService} from '../../assets/services/weather.service';
+import {Http} from '@angular/http';
+
 
 @Component({
   selector: 'app-music',
   templateUrl: './music.component.html',
   styleUrls: ['./music.component.scss']
 })
-export class MusicComponent implements OnInit {
+export class MusicComponent {
 
-  BASE_URL = 'http://ws.audioscrobbler.com/2.0/?method=album.search&album=rain&api_key=2cbf2a70579e7867dc9233ea9ca83d77&format=json\n';
-  /** In de API URL moet 'rain' worden vervangen door 'data.weather[0].main'  */
-
+  BASE_URL = 'http://api.openweathermap.org/data/2.5/weather?lat=8.9936&lon=-79.5198&APPID=475ae9def12f8247c9ec682413dd0bf8';
   data: any;
   search: any;
   albums: Object[];
 
-  constructor( private _musicService: MusicService) { }
 
-  ngOnInit() {
-    this._musicService.getData(this.BASE_URL)
-      .subscribe(res => this.data = res);
+  constructor(private _musicService: MusicService,
+              private _weatherService: WeatherService,
+              _http: Http) {
   }
 
-  showData(){
-    console.log(this.data);
-    this.albums = this.data.results.albummatches.album;
-    // if weather word === word from database => show songs
+
+  showData() {
+    const search = this._weatherService.getSearch();
+    console.log('-=-------------');
+    console.log(search);
+    this._musicService.getData(search)
+      .subscribe(res =>
+      console.log(res)
+        // this.data = res;
+      );
   }
+
+
+
+
+
 }
