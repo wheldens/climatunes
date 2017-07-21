@@ -1,29 +1,27 @@
-
+<!--
 
 <h2 *ngIf="data">Het is vandaag: {{ data.main.temp - 273.15 | number : '2.0-0'}} graden in {{data.name}}!</h2>
 <<<<<<< Updated upstream
-<h2 *ngIf="data">Het is vandaag: {{ data.main.temp - 273.15 | number : '2.0-0'}} graden in {{data.name}}!</h2>
-
-<img src="../../assets/image/{{ data.weather[0].icon }}.png" alt="">
+<h2 *ngIf="data">Het is vandaag: {{ data.main.temp - 273.15 | number : '2.0-0'}} graden in {{data.name}}!</h2> -->
 
 
-<button (click)="showData()" >data</button>
 
-
-<button (click)="showData()" >data</button>
-=======
+<!-- <button (click)="showData()" >data</button> -->
+<!-- ======= -->
 <div class="wrapper">
 
   <div class="top row">
     <div class="left col col-md-3">
-      <p>LINKSSSSS</p>
+      <p class="section-title">Your location</p>
+      <p>{{data.name}}</p>
     </div>
     <div class="middle col col-md-6">
-      <p>MIDDDEN</p>
+      <p class="section-title">Now playing</p>
+      <img src="../../assets/image/{{ data.weather[0].icon }}.png" alt="">
     </div>
     <div class="right col col-md-3">
-      <p>RECHTSSS</p>
-      <p *ngIf="data">{{ data.temp - 273.15}}<span class="superscript">o</span></p>
+      <p class="section-title">Current weather</p>
+      <p *ngIf="data">{{ data.main.temp - 273.15 | number : '2.0-0'}}<span class="superscript">o</span></p>
     </div>
   </div>
 
@@ -42,4 +40,4 @@
   </div>
 
 </div>
->>>>>>> Stashed changes
+<!-- >>>>>>> Stashed changes -->
