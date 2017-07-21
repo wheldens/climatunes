@@ -8,11 +8,14 @@ import 'rxjs/Rx';
 import { AppComponent } from './app.component';
 import { WeatherComponent } from './weather/weather.component';
 import { MusicComponent } from './music/music.component';
+import { GeolocationComponent } from './geolocation/geolocation.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    WeatherComponent,
+    GeolocationComponent
     WeatherComponent,
     MusicComponent,
   ],
