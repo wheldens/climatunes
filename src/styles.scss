@@ -33,7 +33,7 @@ body {
   padding: 1rem;
 
   &.top {
-    @include warmblur;
+    @include greyblur;
   }
 }
 
