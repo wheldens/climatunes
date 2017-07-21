@@ -9,6 +9,7 @@ import {MusicService} from '../../assets/services/music.service';
 export class MusicComponent implements OnInit {
 
   BASE_URL = 'http://ws.audioscrobbler.com/2.0/?method=album.search&album=rain&api_key=2cbf2a70579e7867dc9233ea9ca83d77&format=json\n';
+  /** In de API URL moet 'rain' worden vervangen door 'data.weather[0].main'  */
 
   data: any;
   search: any;
