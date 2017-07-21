@@ -6,13 +6,15 @@ import 'rxjs/Rx';
 
 import { AppComponent } from './app.component';
 import { WeatherComponent } from './weather/weather.component';
+import { GeolocationComponent } from './geolocation/geolocation.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    WeatherComponent
+    WeatherComponent,
+    GeolocationComponent
   ],
   imports: [
     BrowserModule,
