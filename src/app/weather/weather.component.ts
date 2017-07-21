@@ -11,7 +11,7 @@ export class WeatherComponent implements OnInit {
   BASE_URL = 'http://api.openweathermap.org/data/2.5/weather?lat=8.9936&lon=-79.5198&APPID=475ae9def12f8247c9ec682413dd0bf8';
 
   data: any;
-
+  search:any;
 
   constructor(private _weatherService: WeatherService) {
   }
@@ -19,10 +19,13 @@ export class WeatherComponent implements OnInit {
   ngOnInit() {
     this._weatherService.getData(this.BASE_URL)
       .subscribe(res => this.data = res);
+
+    this._weatherService.getData(this.BASE_URL)
+      .subscribe(res => this.search = res.weather[0].main);
   }
 
 showData(){
-  console.log(this.data);
+  console.log(this.search);
 }
 
 }
