@@ -61,11 +61,15 @@ body {
 .bottom {
   // border: 2px solid rgb(163, 223, 65);
   height: 70%;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  padding: 0 1rem; // padding top and bottom to 0;
+
+  .track-info-bar {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
 }
 
-.section-title {
+.section-title, .show-queue {
   font-size: 0.5rem;
   text-transform: uppercase;
   margin-bottom: 0.25rem;
@@ -77,4 +81,8 @@ body {
 
 .track-info-bar > * {
   font-size: 0.5rem;
+}
+
+.show-queue {
+
 }
