@@ -15,8 +15,7 @@ import { GeolocationComponent } from './geolocation/geolocation.component';
   declarations: [
     AppComponent,
     WeatherComponent,
-    GeolocationComponent
-    WeatherComponent,
+    GeolocationComponent,
     MusicComponent,
   ],
   imports: [
