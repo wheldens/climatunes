@@ -9,7 +9,9 @@ import {MusicService} from '../../assets/services/music.service';
 })
 export class WeatherComponent implements OnInit {
 
-  BASE_URL = 'http://api.openweathermap.org/data/2.5/weather?lat=8.9936&lon=-79.5198&APPID=475ae9def12f8247c9ec682413dd0bf8';
+  BASE_URL = 'http://api.openweathermap.org/data/2.5/weather?lat=51.9280556&lon=4.4181724&APPID=475ae9def12f8247c9ec682413dd0bf8';
+  // BASE_URL = 'http://api.openweathermap.org/data/2.5/weather?lat=11.9280556&lon=10.4181724&APPID=475ae9def12f8247c9ec682413dd0bf8';
+  // BASE_URL = 'http://api.openweathermap.org/data/2.5/weather?lat=-36.8621448&lon=174.5852798&APPID=475ae9def12f8247c9ec682413dd0bf8';
 
   data: any;
   albums: any[];

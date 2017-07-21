@@ -18,7 +18,7 @@ body {
   background: #3C3B3F;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to bottom, #605C3C, #3C3B3F);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to bottom, #605C3C, #3C3B3F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  background-image: url(https://unsplash.it/1200);
+  background-image: url(/assets/image/ryan.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 
@@ -78,7 +78,7 @@ body {
 a {
   position: absolute;
   top: 50%;
-  left: 45%;
+  left: 45.55%;
   transform: translateX(50%);
   transform: translateY(-485%);
 }
@@ -92,6 +92,11 @@ a {
   padding-bottom: 0.75rem;
 }
 
+.track-info-bar:nth-of-type(1n+12) {
+  display: none;
+}
+
 .track-info {
   font-size: 0.5rem;
+  font-weight: 300;
 }
