@@ -19,10 +19,13 @@ export class WeatherComponent implements OnInit {
   ngOnInit() {
     this._weatherService.getData(this.BASE_URL)
       .subscribe(res => this.data = res);
+
+    this._weatherService.getData(this.BASE_URL)
+      .subscribe(res => this.search = res.weather[0].main);
   }
 
 showData(){
-  console.log(this.data);
+  console.log(this.search);
 }
 
 }
