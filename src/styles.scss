@@ -1,1 +1,65 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "./assets/scss/variables";
+@import "./assets/scss/grid";
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+  font-family: $font;
+  font-size: $fontsize;
+  color: $text-color;
+}
+
+body {
+  background-image: url(https://unsplash.it/1200);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.superscript {
+   vertical-align: super;
+   font-size: 0.8rem;
+ }
+
+.wrapper {
+
+}
+
+.row {
+  padding: 1rem;
+
+  &.top {
+    @include warmblur;
+  }
+}
+
+.col {
+  float: left;
+}
+
+.left {
+  width: 30%;
+  text-align: left;
+}
+
+.middle {
+  width: 40%;
+  text-align: center;
+}
+
+.right {
+  width: 30%;
+  text-align: right;
+}
+
+
+.bottom {
+  border: 2px solid rgb(163, 223, 65);
+  height: 70%;
+
+
+}

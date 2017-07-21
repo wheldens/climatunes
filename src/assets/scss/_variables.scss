@@ -1,0 +1,29 @@
+// ----- ALL VARIABLES GO HERE ----- //
+
+// Import Monterrat font from Google Fonts
+@import url('https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500');
+
+$text-color: #F5F5F5;
+$panel-color-grey: rgba(100,100,100,0.6);
+$panel-color-warm: rgba(100,100,100,0.6);
+$panel-color-cool: rgba(100,100,100,0.6);
+
+
+$panel-blur: blur(10px);
+$font: 'Montserrat', Helvetica, sans-serif;
+$fontsize: 20px;
+
+@mixin greyblur {
+  background-color: $panel-color-grey;
+  backdrop-filter: $panel-blur;
+}
+
+@mixin warmblur {
+  background-color: $panel-color-warm;
+  backdrop-filter: $panel-blur;
+}
+
+@mixin coolblur {
+  background-color: $panel-color-cool;
+  backdrop-filter: $panel-blur;
+}
