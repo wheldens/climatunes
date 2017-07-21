@@ -11,7 +11,7 @@
   box-sizing: border-box;
   font-family: $font;
   font-size: $fontsize;
-  color: $text-color;
+  color: $primary-color;
 }
 
 body {
@@ -42,24 +42,27 @@ body {
 }
 
 .left {
-  width: 30%;
   text-align: left;
 }
 
 .middle {
-  width: 40%;
   text-align: center;
+
+  & img {
+    fill: $primary-color;
+  }
 }
 
 .right {
-  width: 30%;
   text-align: right;
 }
 
 
 .bottom {
-  border: 2px solid rgb(163, 223, 65);
+  // border: 2px solid rgb(163, 223, 65);
   height: 70%;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 .section-title {
@@ -70,4 +73,8 @@ body {
   &+p, &+p>span {
     font-weight: 100;
   }
+}
+
+.track-info-bar > * {
+  font-size: 0.5rem;
 }
