@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {WeatherService} from '../../assets/services/weather.service';
+import {MusicService} from '../../assets/services/music.service';
 
 @Component({
   selector: 'app-weather',
@@ -11,9 +12,12 @@ export class WeatherComponent implements OnInit {
   BASE_URL = 'http://api.openweathermap.org/data/2.5/weather?lat=8.9936&lon=-79.5198&APPID=475ae9def12f8247c9ec682413dd0bf8';
 
   data: any;
+  albums: any[];
 
-
-  constructor(private _weatherService: WeatherService) {
+  constructor(
+    private _weatherService: WeatherService,
+    private _musicService: MusicService
+  ) {
   }
 
   ngOnInit() {
@@ -29,10 +33,15 @@ export class WeatherComponent implements OnInit {
       );
   }
 
-showData(){
-  console.log(this.data);
-}
-
-
+  showData() {
+    const search = this._weatherService.getSearch();
+    console.log('-=-------------');
+    console.log(search);
+    this._musicService.getData(search)
+      .subscribe(res =>
+      // console.log(res.results.albummatches.album)
+        this.albums = res.results.albummatches.album
+      );
+  }
 
 }

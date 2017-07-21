@@ -30,3 +30,8 @@ $fontsize: 28px;
   background-color: $panel-color-cool;
   backdrop-filter: $panel-blur;
 }
+
+@mixin songsblur {
+  background-color: $panel-color-lightgrey;
+  backdrop-filter: $panel-blur;
+}
