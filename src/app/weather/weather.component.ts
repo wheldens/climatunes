@@ -10,7 +10,7 @@ export class WeatherComponent implements OnInit {
 
   BASE_URL = 'http://api.openweathermap.org/data/2.5/weather?lat=51.9225&lon=4.4792&APPID=475ae9def12f8247c9ec682413dd0bf8';
 
-  data: Object;
+  data: any;
 
 
   constructor(private _weatherService: WeatherService) {
