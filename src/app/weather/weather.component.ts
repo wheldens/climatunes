@@ -22,6 +22,11 @@ export class WeatherComponent implements OnInit {
         this._weatherService.setSearch(res)
         // this.data = res;
       );
+
+    this._weatherService.getData(this.BASE_URL)
+      .subscribe(res =>
+        this.data = res
+      );
   }
 
 showData(){
