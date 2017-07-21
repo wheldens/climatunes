@@ -29,8 +29,8 @@ export class MusicComponent {
     console.log(search);
     this._musicService.getData(search)
       .subscribe(res =>
-      console.log(res)
-        // this.data = res;
+      // console.log(res.results.albummatches.album)
+        this.albums = res.results.albummatches.album
       );
   }
 
