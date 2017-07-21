@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { WeatherService } from '../../assets/services/weather.service';
+import {Component, OnInit} from '@angular/core';
+import {WeatherService} from '../../assets/services/weather.service';
 
 @Component({
   selector: 'app-weather',
@@ -8,17 +8,18 @@ import { WeatherService } from '../../assets/services/weather.service';
 })
 export class WeatherComponent implements OnInit {
 
-  BASE_URL = 'https://api.themoviedb.org/3';
-  API_KEY = '149a733ca73a71f9233c239e0607f92d';
-  ENDPOINT = '/discover/movie';
+  BASE_URL = 'http://api.openweathermap.org/data/2.5/weather?lat=51.9225&lon=4.4792&APPID=475ae9def12f8247c9ec682413dd0bf8';
 
   data: Object;
 
-  constructor(private _weatherService: WeatherService) { }
 
-  ngOnInit() {
-      this._weatherService.getData( this.BASE_URL, this.ENDPOINT, this.API_KEY)
-        .subscribe(res => this.data = res.results)
+  constructor(private _weatherService: WeatherService) {
   }
 
+  ngOnInit() {
+    this._weatherService.getData(this.BASE_URL)
+      .subscribe(res => this.data = res.main);
+  }
 }
+
+
