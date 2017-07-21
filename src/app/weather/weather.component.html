@@ -1,4 +1,5 @@
-<h1>Weer component</h1>
-<div *ngFor="let haha of data">
-  <div>{{ haha.title}}</div>
-</div>
+<h1>Weer component
+</h1>
+
+
+<h2 *ngIf="data">Het is vandaag: {{ data.temp - 273.15}} graden!</h2>

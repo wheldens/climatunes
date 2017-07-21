@@ -7,8 +7,8 @@ export class WeatherService {
   constructor(private _http: Http) {
   }
 
-  getData(base_url, endpoint, key) {
-    return this._http.get(base_url + endpoint + '?api_key=' + key)
+  getData(base_url) {
+    return this._http.get(base_url )
       .map(res => res.json());
   }
 
