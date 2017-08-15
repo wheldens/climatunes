@@ -1,29 +1,24 @@
 import {Injectable} from '@angular/core';
 import {Http} from '@angular/http';
+import {Weather} from '../models/weather';
 
 @Injectable()
 export class WeatherService {
+  data: Weather = new Weather;
+  // url: string = 'http://api.openweathermap.org/data/2.5/weather?lat=51.9280556&lon=4.4181724&APPID=475ae9def12f8247c9ec682413dd0bf8';
 
-search: any;
-data: any;
+  constructor(private _http: Http) {}
 
-  constructor(private _http: Http) {
+  getData() {
+    return this.data;
+    // return this._http.get( this.url  )
+    //   .map(res => this.data = res.json());
   }
 
-  getData(base_url) {
-    return this._http.get(base_url )
-      .map(res => this.data = res.json());
+  getAlbums() {
   }
 
-  setSearch(res) {
-    this.search = res.weather[0].main;
-    console.log('bbaa');
-    console.log(this.search);
-  }
 
-  getSearch() {
-    return  this.search;
-  }
 
 
 }
