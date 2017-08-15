@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {WeatherService} from '../../assets/services/weather.service';
 
+
 @Component({
   selector: 'app-music',
   templateUrl: './music.component.html',
@@ -14,7 +15,7 @@ export class MusicComponent implements OnInit {
 
   ngOnInit() {
 
-    this._weatherService.getAlbums()
+    this.albums = this._weatherService.getAlbums();
   }
 
 

@@ -1,8 +1,10 @@
 export class Weather {
-  public title: string = 'title';
-  public location: string = 'location';
-  public  icon: string = 'icon';
-  public  weather: string = 'weather';
-  public  temp: number = 0;
+  public title ?: string;
+  public  icon ?: string ;
+  public  icon_link ?: string = '../assets/image/SVG/' + this.icon + '.svg';
+  public  weather ?: string;
+  public  temp ?: number;
+  public  lat ?: number;
+  public  lon ?: number;
 }
 
