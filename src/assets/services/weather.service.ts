@@ -12,8 +12,11 @@ export class WeatherService {
   getData() {
     return this._http.get(this.url)
       .map(res => this.data = res.json());
+
   }
   getAlbums() {
-    return this.data;
+    return this._http.get('http://ws.audioscrobbler.com/2.0/?method=album.search&album=' + this.data.weather +
+      '&api_key=2cbf2a70579e7867dc9233ea9ca83d77&format=json\n')
+      .map(res => res.json());
   }
 }

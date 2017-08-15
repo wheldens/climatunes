@@ -8,15 +8,19 @@ import {WeatherService} from '../../assets/services/weather.service';
   styleUrls: ['./music.component.scss']
 })
 export class MusicComponent implements OnInit {
-  albums: Object[];
+  albums;
 
   constructor(private _weatherService: WeatherService) {
   }
 
   ngOnInit() {
 
-    this.albums = this._weatherService.getAlbums();
   }
 
+  getAlbums(){
+  this._weatherService.getAlbums()
+  .subscribe(res =>  this.albums = res.results.albummatches.album);
+
+  }
 
 }
