@@ -16,7 +16,6 @@ export class MusicComponent implements AfterContentChecked {
 
   ngAfterContentChecked() {
     this.getAlbums();
-    console.log(this.albums);
   }
 
   getAlbums() {
