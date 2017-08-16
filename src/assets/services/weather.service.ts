@@ -9,8 +9,8 @@ export class WeatherService {
 
   constructor(private _http: Http) {}
 
-  getData() {
-    return this._http.get(this.url)
+  getData(url: string) {
+    return this._http.get(url)
       .map(res => this.data = res.json());
   }
 }
