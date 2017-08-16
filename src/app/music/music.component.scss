@@ -1,5 +1,12 @@
 @import "../../assets/scss/variables";
 
+.container {
+  max-width: 800px;
+  margin: auto;
+}
+
 .bottom {
     @include songsblur;
+  padding-bottom: 350px;
 }
+

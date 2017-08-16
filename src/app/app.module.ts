@@ -8,7 +8,9 @@ import {AppComponent} from './app.component';
 import {WeatherComponent} from './weather/weather.component';
 import {MusicComponent} from './music/music.component';
 import {MusicService} from '../assets/services/music.service';
-import { TempPipe } from '../assets/pipes/temp.pipe';
+import {TempPipe} from '../assets/pipes/temp.pipe';
+import {ForCPipe} from '../assets/pipes/temp.pipe';
+import {ShortenPipe} from '../assets/pipes/shorten.pipe';
 
 
 @NgModule({
@@ -16,7 +18,9 @@ import { TempPipe } from '../assets/pipes/temp.pipe';
     AppComponent,
     WeatherComponent,
     MusicComponent,
-    TempPipe
+    TempPipe,
+    ForCPipe,
+    ShortenPipe
   ],
   imports: [
     BrowserModule,

@@ -12,6 +12,6 @@
   <div class="right col col-3">
     <p class="section-title">Current weather</p>
     <p>{{ data.weather }}</p>
-    <p>{{ data.temp | temp | number:'2.1-1' }}<span class="superscript">o</span></p>
+    <p>{{ data.temp | temp:'C'| number:'2.1-1' }} <span class="superscript">{{ ForC | ForC:'C' }}</span></p>
   </div>
 </div>

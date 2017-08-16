@@ -1,5 +1,4 @@
 import {Component, Input} from '@angular/core';
-import {TempPipe} from '../../assets/pipes/temp.pipe'
 
 @Component({
   selector: 'app-weather',
@@ -7,5 +6,7 @@ import {TempPipe} from '../../assets/pipes/temp.pipe'
   styleUrls: ['./weather.component.scss']
 })
 export class WeatherComponent {
+  ForC: string;
   @Input() data;
 }
+;
