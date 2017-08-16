@@ -7,11 +7,11 @@
   <div class="middle col col-6">
     <p class="section-title company">ClimaTunes</p>
     <p class="current-song"></p>
-    <img src="{{ data.icon_link }}" alt="">
+    <img src="{{ data.icon_link }}" alt="" width="100px">
   </div>
   <div class="right col col-3">
     <p class="section-title">Current weather</p>
     <p>{{ data.weather }}</p>
-    <p>{{ data.temp }}<span class="superscript">o</span></p>
+    <p>{{ data.temp | temp | number:'2.1-1' }}<span class="superscript">o</span></p>
   </div>
 </div>

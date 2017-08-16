@@ -1,14 +1,12 @@
-<a (click)="getAlbums()">Get Albums</a><br>
-
 <div class="bottom row">
   <ul class="songs">
-    <li *ngFor="let tunes of albums" class="track-info-bar">
+    <li *ngFor="let tunes of albums">
       <span class="artist col col-5 track-info">
         {{tunes.artist}}
       </span>
-      <span class="title col col-7 track-info">
-        {{tunes.name}}
-      </span>
+      <a href="{{ tunes.url }}"><span class="title col col-7 track-info">
+       {{tunes.name}}
+      </span></a>
     </li>
   </ul>
 </div>
