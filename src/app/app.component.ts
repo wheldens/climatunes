@@ -15,33 +15,33 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    const positionOptions = {
-      enableHighAccuracy: true,
-      timeout: 6000,
-      maximumAge: 1000
-    };
-
-    navigator.geolocation.getCurrentPosition((position) => this.geoSuccessHandler(position), this.geoErrorHandler, positionOptions);
-  }
-
-  // get geo location and set weather url
-  geoSuccessHandler(position) {
-    console.log(position);
-    const lat = position.coords.latitude;
-    const lon = position.coords.longitude;
-    const url = 'http://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon +
-      '&APPID=475ae9def12f8247c9ec682413dd0bf8';
-    this.url = url;
-    this.setData(this.url);
-  };
-
-  geoErrorHandler(error) {
-    console.log(error);
+  //   const positionOptions = {
+  //     enableHighAccuracy: true,
+  //     timeout: 6000,
+  //     maximumAge: 1000
+  //   };
+  //
+  //   navigator.geolocation.getCurrentPosition((position) => this.geoSuccessHandler(position), this.geoErrorHandler, positionOptions);
+  // }
+  //
+  // // get geo location and set weather url
+  // geoSuccessHandler(position) {
+  //   console.log(position);
+  //   const lat = position.coords.latitude;
+  //   const lon = position.coords.longitude;
+  //   const url = 'http://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon +
+  //     '&APPID=475ae9def12f8247c9ec682413dd0bf8';
+  //   this.url = url;
+    this.setData();
+  // };
+  //
+  // geoErrorHandler(error) {
+  //   console.log(error);
   };
 
   // get weather data and set data
-  setData(url) {
-    this._weatherService.getData(url)
+  setData() {
+    this._weatherService.getData('http://api.openweathermap.org/data/2.5/weather?lat=50&lon=1&APPID=475ae9def12f8247c9ec682413dd0bf8')
       .subscribe(res => {
         console.log(res);
         this.data.title = res.name;
