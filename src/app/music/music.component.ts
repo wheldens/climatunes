@@ -9,6 +9,7 @@ import {Weather} from '../../assets/models/weather';
 })
 export class MusicComponent implements OnChanges {
   songs;
+  page: number = 1
   @Input() data: Weather;
 
   constructor(private _musicService: MusicService) {
@@ -16,14 +17,26 @@ export class MusicComponent implements OnChanges {
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes['data']) {
-      this.getAlbums(this.data.weather);
+      this.getAlbums(this.data.weather, this.page);
       console.log(this.data.weather);
     }
   }
 
-  getAlbums(search) {
-    this._musicService.getAlbums(search)
+  getAlbums(search, page) {
+    this._musicService.getAlbums(search, page)
       .subscribe(res => this.songs = res.results.trackmatches.track);
+  }
+
+  nextPage(){
+    this.page = this.page + 1;
+    console.log(this.page);
+    this.getAlbums(this.data.weather, this.page);
+  }
+
+  previousPage(){
+    this.page = this.page - 1;
+    console.log(this.page);
+    this.getAlbums(this.data.weather, this.page);
   }
 
 }

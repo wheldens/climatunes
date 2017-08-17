@@ -41,7 +41,7 @@ export class AppComponent implements OnInit {
 
   // get weather data and set data
   setData() {
-    this._weatherService.getData('http://api.openweathermap.org/data/2.5/weather?lat=50&lon=1&APPID=475ae9def12f8247c9ec682413dd0bf8')
+    this._weatherService.getData('http://api.openweathermap.org/data/2.5/weather?lat=24&lon=-76&APPID=475ae9def12f8247c9ec682413dd0bf8')
       .subscribe(res => {
         console.log(res);
         this.data.title = res.name;
