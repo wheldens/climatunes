@@ -1,7 +1,16 @@
 <div class="container">
 
   <h1 class="center">SONGS</h1><br>
+
     <ul class="songs effect1">
+
+      <div class="row">
+        <span class="col-md-6">Artist</span>
+        <span class="col-md-6">Song</span>
+      </div>
+      <hr>
+      <br>
+
       <li class="row" *ngFor="let song of songs">
 
         <span  class="col-md-6" *ngIf="song.artist">

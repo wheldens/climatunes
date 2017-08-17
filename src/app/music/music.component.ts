@@ -24,7 +24,6 @@ export class MusicComponent implements OnChanges {
   getAlbums(search) {
     this._musicService.getAlbums(search)
       .subscribe(res => this.songs = res.results.trackmatches.track);
-    // .subscribe(res =>  console.log(res));
   }
 
 }
