@@ -1,0 +1,11 @@
+@import "../../assets/scss/variables";
+
+header {
+  @include greyblur;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 30px;
+}

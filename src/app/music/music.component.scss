@@ -1,14 +1,15 @@
 @import "../../assets/scss/variables";
 
 .container {
-  max-width: 1200px;
+  max-width: 800px;
   margin: 0 auto;
   @include songsblur;
   padding: 30px;
 }
 
-.bottom {
+.songs {
     @include songsblur;
+    font-size: $fontsize;
   padding-bottom: 350px;
 }
 

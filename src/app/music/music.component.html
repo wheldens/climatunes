@@ -2,12 +2,11 @@
     <ul>
       <li class="row" *ngFor="let tunes of albums">
 
-        <span  class="col-md-4" *ngIf="tunes.artist">
+        <span  class="col-md-6" *ngIf="tunes.artist">
          {{tunes.artist | shorten:'25' }}
         </span>
 
-
-        <span class="col-md-8">
+        <span class="col-md-6">
           <a href="{{ tunes.url }}">
              {{ tunes.name | shorten:'25' }}
           </a>
