@@ -39,4 +39,9 @@ export class MusicComponent implements OnChanges {
     this.getAlbums(this.data.weather, this.page);
   }
 
+  test(){
+    console.log(this.songs);
+  }
+
 }
+

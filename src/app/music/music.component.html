@@ -1,24 +1,33 @@
-<div class="container">
+<br><h1 class="center">SONGS</h1><br>
 
-  <h1 class="center">SONGS</h1><br>
+<div class="row">
+  <div class="col-md-6">
+    <iframe id="ytplayer" type="text/html" width="100%" height="360"
+            src="https://www.youtube.com/embed/M7lc1UVf-VE?autoplay=1&origin=http://example.com"
+            frameborder="0"></iframe>
+      </div>
 
-  <div class="row">
-  <button (click)="previousPage()"> < </button>
-  <button (click)="nextPage()"> > </button>
-  <p class="page">Page: {{ page }}</p>
-  </div>
+
+  <div class="col-md-6">
     <ul class="songs effect1">
 
       <div class="row">
+        <button (click)="previousPage()"> <</button>
+        <button (click)="nextPage()"> ></button>
+        <p class="page">Page: {{ page }}</p>
+      </div>
+
+      <div class="row description">
         <span class="col-md-6">Artist</span>
         <span class="col-md-6">Song</span>
+        <hr>
       </div>
-      <hr>
-      <br>
 
       <li class="row" *ngFor="let song of songs">
 
-        <span  class="col-md-6" *ngIf="song.artist">
+       <div class="col-md-2"><img src="{{ song.image[1]['#text'] }}" alt=""></div>
+
+        <span class="col-md-4" *ngIf="song.artist">
            <a href="{{ song.url }}">
          {{song.artist | shorten:'25' }}
            </a>
@@ -26,13 +35,15 @@
 
         <span class="col-md-6">
           <a href="{{ song.url }}">
-             {{ song.name | shorten:'25' }}
+              {{ song.name | shorten:'25' }}
           </a>
         </span>
-
       </li>
     </ul>
+  </div>
+
+
 </div>
 
 
-
+<button (click)="test()">test</button>

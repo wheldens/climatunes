@@ -10,7 +10,7 @@
 .songs {
   font-size: $fontsize;
   padding: 50px;
-  padding-bottom: 350px;
+  padding-bottom: 150px;
   @include songsblur;
   a {
     color: #e1e1e1;
@@ -28,4 +28,14 @@ p.page {
   position: relative;
   left: 10px;
   top: 12px;
+}
+
+.description {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+hr {
+  margin-top: 10px;
+  width: 100%;
 }
