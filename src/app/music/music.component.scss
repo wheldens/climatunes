@@ -1,8 +1,10 @@
 @import "../../assets/scss/variables";
 
 .container {
-  max-width: 800px;
-  margin: auto;
+  max-width: 1200px;
+  margin: 0 auto;
+  @include songsblur;
+  padding: 30px;
 }
 
 .bottom {

@@ -29,16 +29,6 @@ body {
   font-size: 0.6rem;
 }
 
-.row {
-  padding: 1rem;
-  &.top {
-    @include greyblur;
-  }
-}
-
-.col {
-  float: left;
-}
 
 .left {
   text-align: left;
@@ -52,16 +42,3 @@ body {
   text-align: right;
 }
 
-
-.section-title, .show-queue {
-  font-size: 0.5rem;
-  text-transform: uppercase;
-  margin-bottom: 0.25rem;
-}
-
-
-.track-info {
-  margin-bottom: 0.15rem;
-  font-size: 0.6rem;
-  font-weight: 300;
-}

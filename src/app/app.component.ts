@@ -17,7 +17,7 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     const positionOptions = {
       enableHighAccuracy: true,
-      timeout: 5000,
+      timeout: 6000,
       maximumAge: 1000
     };
 
