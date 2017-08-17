@@ -15,7 +15,7 @@
   a {
     color: #e1e1e1;
     &:hover {
-      color: #46ee56;
+      color: $bright-color;
     }
   }
 
@@ -24,4 +24,8 @@
   }
 
 }
-
+p.page {
+  position: relative;
+  left: 10px;
+  top: 12px;
+}
