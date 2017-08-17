@@ -8,7 +8,7 @@ import {Weather} from '../../assets/models/weather';
   styleUrls: ['./music.component.scss']
 })
 export class MusicComponent implements OnChanges {
-  albums;
+  songs;
   @Input() data: Weather;
 
   constructor(private _musicService: MusicService) {
@@ -23,7 +23,8 @@ export class MusicComponent implements OnChanges {
 
   getAlbums(search) {
     this._musicService.getAlbums(search)
-      .subscribe(res => this.albums = res.results.albummatches.album);
+      .subscribe(res => this.songs = res.results.trackmatches.track);
+    // .subscribe(res =>  console.log(res));
   }
 
 }

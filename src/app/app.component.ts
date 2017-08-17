@@ -45,7 +45,7 @@ export class AppComponent implements OnInit {
       .subscribe(res => {
         console.log(res);
         this.data.title = res.name;
-        this.data.icon_link = '../assets/image/icons/' + res.weather[0].icon + '.png';
+        this.data.icon_link = '../assets/image/' + res.weather[0].icon + '.svg';
         this.data.weather = res.weather[0].main;
         this.data.temp = res.main.temp;
         this.data.lat = res.coord.lat;

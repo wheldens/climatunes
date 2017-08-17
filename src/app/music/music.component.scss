@@ -4,12 +4,25 @@
   max-width: 800px;
   margin: 0 auto;
   @include songsblur;
-  padding: 30px;
+  padding: 70px;
 }
 
 .songs {
-    @include songsblur;
-    font-size: $fontsize;
+  font-size: $fontsize;
+  padding: 50px;
   padding-bottom: 350px;
+  @include songsblur;
+
+  a {
+    color: #e1e1e1;
+    &:hover {
+      color: #46ee56;
+    }
+  }
+
+  li.row {
+    margin-bottom: 10px;
+  }
+
 }
 

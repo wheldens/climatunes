@@ -1,14 +1,18 @@
-<div class="container songs effect2">
-    <ul>
-      <li class="row" *ngFor="let tunes of albums">
+<div class="container">
 
-        <span  class="col-md-6" *ngIf="tunes.artist">
-         {{tunes.artist | shorten:'25' }}
+  <h1 class="center">SONGS</h1><br>
+    <ul class="songs effect1">
+      <li class="row" *ngFor="let song of songs">
+
+        <span  class="col-md-6" *ngIf="song.artist">
+           <a href="{{ song.url }}">
+         {{song.artist | shorten:'25' }}
+           </a>
         </span>
 
         <span class="col-md-6">
-          <a href="{{ tunes.url }}">
-             {{ tunes.name | shorten:'25' }}
+          <a href="{{ song.url }}">
+             {{ song.name | shorten:'25' }}
           </a>
         </span>
 
