@@ -1,13 +1,15 @@
 <div class="container">
   <div class="bottom row">
-    <ul class="songs">
+    <ul *ngIf="albums" class="songs">
+      haha
       <li *ngFor="let tunes of albums">
       <span  class="artist col col-6 track-info">
         {{tunes.artist | shorten:'25'}}
       </span>
-      <span class="title col col-6 track-info">  <a href="{{ tunes.url }}">
-       {{ tunes.name | shorten:'45'}}</a>
-      </span>
+        <a href="{{ tunes.url }}">
+      <span class="title col col-6 track-info">
+       {{ tunes.name | shorten:'45'}}
+      </span></a>
       </li>
     </ul>
   </div>

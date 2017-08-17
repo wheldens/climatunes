@@ -1,4 +1,9 @@
 <div class="wrapper">
-  <app-weather [data]="data" ></app-weather>
-  <!--<app-music [data]="data" ></app-music>-->
+
+  <app-weather [data]="data"></app-weather>
+
+  <div *ngIf="data.weather!=''">
+    <app-music [data]="data"></app-music>
+  </div>
+
 </div>

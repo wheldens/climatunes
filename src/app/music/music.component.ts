@@ -1,4 +1,4 @@
-import {Component, AfterContentChecked, Input} from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 import {MusicService} from '../../assets/services/music.service';
 import {Weather} from '../../assets/models/weather';
 
@@ -7,21 +7,21 @@ import {Weather} from '../../assets/models/weather';
   templateUrl: './music.component.html',
   styleUrls: ['./music.component.scss']
 })
-export class MusicComponent implements AfterContentChecked {
-  albums;
+export class MusicComponent implements OnInit {
+  albums = [];
   @Input() data: Weather;
 
   constructor(private _musicService: MusicService) {
   }
 
-  ngAfterContentChecked() {
-    this.getAlbums();
+  ngOnInit() {
+    this.getAlbums(this.data.weather);
+    console.log(this.data.weather);
   }
 
-  getAlbums() {
-      this._musicService.getAlbums(this.data.weather)
-        .subscribe(res => this.albums = res.results.albummatches.album);
+  getAlbums(search) {
+      this._musicService.getAlbums(search)
+        .subscribe(res => console.log(res.results.albummatches));
   }
-
 
 }
