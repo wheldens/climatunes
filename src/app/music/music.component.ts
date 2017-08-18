@@ -1,6 +1,5 @@
 import {Component, OnChanges, SimpleChanges, Input} from '@angular/core';
 import {MusicService} from '../../assets/services/music.service';
-import {YoutubeService} from '../../assets/services/youtube.service'
 import {Weather} from '../../assets/models/weather';
 
 @Component({
@@ -14,36 +13,34 @@ export class MusicComponent implements OnChanges {
   @Input() data: Weather;
   songSearch: string;
 
-  constructor( private _youtubeService: YoutubeService, private _musicService: MusicService) {
+  constructor(private _musicService: MusicService) {
   }
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes['data']) {
-      this.getAlbums(this.data.weather, this.page);
-      console.log(this.data.weather);
+      this.getSongs(this.data.weather, this.page);
     }
   }
 
-  getAlbums(search, page) {
-    this._musicService.getAlbums(search, page)
+  getSongs(search, page) {
+    this._musicService.getSongs(search, page)
       .subscribe(res => this.songs = res.results.trackmatches.track);
   }
 
   nextPage(){
     this.page = this.page + 1;
     console.log(this.page);
-    this.getAlbums(this.data.weather, this.page);
+    this.getSongs(this.data.weather, this.page);
   }
 
   previousPage(){
     this.page = this.page - 1;
     console.log(this.page);
-    this.getAlbums(this.data.weather, this.page);
+    this.getSongs(this.data.weather, this.page);
   }
 
   sendSong(song){
     this.songSearch = song;
-    console.log(this.songSearch);
   }
 
 }

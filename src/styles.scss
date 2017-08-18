@@ -41,12 +41,8 @@ body {
 
 button {
   padding: 5px;
-  width: 34px;
-  font-size: larger;
   background-color: #8b8b8b;
   border: none;
-  margin: 5px;
-  border-radius: 0px;
   &:hover {
     background-color: $bright-color;
   }

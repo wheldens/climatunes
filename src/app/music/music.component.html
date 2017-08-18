@@ -8,7 +8,7 @@
   <div class="col-md-6">
     <ul class="songs effect1">
 
-      <div class="row">
+      <div class="row pagination">
         <button (click)="previousPage()"> <</button>
         <button (click)="nextPage()"> ></button>
         <p class="page">Page: {{ page }}</p>
@@ -21,7 +21,6 @@
       </div>
 
       <li class="row" *ngFor="let song of songs">
-
        <div class="col-md-2"><img src="{{ song.image[1]['#text'] }}" alt=""></div>
 
         <span class="col-md-4" *ngIf="song.artist">
@@ -34,7 +33,7 @@
           <a href="{{ song.url }}">
               {{ song.name | shorten:'25' }}
           </a>
-          <button (click)="sendSong(song.name)">Watch video</button>
+          <button (click)="sendSong(song.name + song.artist)">Watch video</button>
         </span>
       </li>
     </ul>
