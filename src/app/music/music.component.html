@@ -2,9 +2,9 @@
 
 <div class="row">
   <div class="col-md-6">
-    <app-youtube></app-youtube>
+    <app-youtube [songSearch]="songSearch"></app-youtube>
       </div>
-  
+
   <div class="col-md-6">
     <ul class="songs effect1">
 
@@ -34,6 +34,7 @@
           <a href="{{ song.url }}">
               {{ song.name | shorten:'25' }}
           </a>
+          <button (click)="sendSong(song.name)">Watch video</button>
         </span>
       </li>
     </ul>

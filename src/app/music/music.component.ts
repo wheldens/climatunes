@@ -12,6 +12,7 @@ export class MusicComponent implements OnChanges {
   songs;
   page: number = 1
   @Input() data: Weather;
+  songSearch: string;
 
   constructor( private _youtubeService: YoutubeService, private _musicService: MusicService) {
   }
@@ -38,6 +39,11 @@ export class MusicComponent implements OnChanges {
     this.page = this.page - 1;
     console.log(this.page);
     this.getAlbums(this.data.weather, this.page);
+  }
+
+  sendSong(song){
+    this.songSearch = song;
+    console.log(this.songSearch);
   }
 
 }
