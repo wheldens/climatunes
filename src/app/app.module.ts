@@ -12,6 +12,10 @@ import {TempPipe} from '../assets/pipes/temp.pipe';
 import {ForCPipe} from '../assets/pipes/temp.pipe';
 import {ShortenPipe} from '../assets/pipes/shorten.pipe';
 
+import {YoutubeComponent} from './youtube/youtube.component';
+import {YoutubePlayerModule} from 'ng2-youtube-player';
+import {YoutubeService} from '../assets/services/youtube.service';
+
 
 @NgModule({
   declarations: [
@@ -20,13 +24,15 @@ import {ShortenPipe} from '../assets/pipes/shorten.pipe';
     MusicComponent,
     TempPipe,
     ForCPipe,
-    ShortenPipe
+    ShortenPipe,
+    YoutubeComponent
   ],
   imports: [
     BrowserModule,
-    HttpModule
+    HttpModule,
+    YoutubePlayerModule
   ],
-  providers: [WeatherService, MusicService],
+  providers: [WeatherService, MusicService, YoutubeService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
