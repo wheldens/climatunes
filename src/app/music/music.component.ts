@@ -1,5 +1,6 @@
 import {Component, OnChanges, SimpleChanges, Input} from '@angular/core';
 import {MusicService} from '../../assets/services/music.service';
+import {YoutubeService} from '../../assets/services/youtube.service'
 import {Weather} from '../../assets/models/weather';
 
 @Component({
@@ -12,7 +13,7 @@ export class MusicComponent implements OnChanges {
   page: number = 1
   @Input() data: Weather;
 
-  constructor(private _musicService: MusicService) {
+  constructor( private _youtubeService: YoutubeService, private _musicService: MusicService) {
   }
 
   ngOnChanges(changes: SimpleChanges) {
@@ -37,10 +38,6 @@ export class MusicComponent implements OnChanges {
     this.page = this.page - 1;
     console.log(this.page);
     this.getAlbums(this.data.weather, this.page);
-  }
-
-  test(){
-    console.log(this.songs);
   }
 
 }

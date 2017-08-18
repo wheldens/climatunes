@@ -1,32 +1,6 @@
-<div class="container">
-  <section class="panel">
-    <div class="panel-heading">Angular (+2,4) Youtube Player Component</div>
-    <div class="panel-body">
-      <youtube-player
-        [videoId]="id"
-        (ready)="savePlayer($event)"
-        (change)="onStateChange($event)"
-      >
-      </youtube-player>
-    </div>
-  </section>
-
-  <div class="col-md-12">
-    <div class="btn-group" role="group">
-      <button type="button" class="btn btn-default" (click)="playVideo()">Play</button>
-      <button type="button" class="btn btn-default" (click)="pauseVideo()">Pause</button>
-    </div>
-  </div>
-
-  <div class="col-md-12">
-    <section class="panel">
-      <div class="panel-title">Player State</div>
-      <div class="panel-body">
-        <pre>{{ ytEvent }}</pre>
-      </div>
-    </section>
-  </div>
-</div>
+<iframe width="100%" height="315" [src]="url" frameborder="0" allowfullscreen></iframe>
 
 
-<button (click)="getYoutTubeID()">get id</button>
+<button (click)="getYoutTubeID('Clouds Over CaliforniaDevilDriver' ,
+'Clouds Over California')">get id</button>
+{{ id }}

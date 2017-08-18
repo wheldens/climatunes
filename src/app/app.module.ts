@@ -13,7 +13,6 @@ import {ForCPipe} from '../assets/pipes/temp.pipe';
 import {ShortenPipe} from '../assets/pipes/shorten.pipe';
 
 import {YoutubeComponent} from './youtube/youtube.component';
-import {YoutubePlayerModule} from 'ng2-youtube-player';
 import {YoutubeService} from '../assets/services/youtube.service';
 
 
@@ -29,8 +28,7 @@ import {YoutubeService} from '../assets/services/youtube.service';
   ],
   imports: [
     BrowserModule,
-    HttpModule,
-    YoutubePlayerModule
+    HttpModule
   ],
   providers: [WeatherService, MusicService, YoutubeService],
   bootstrap: [AppComponent]

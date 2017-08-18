@@ -1,38 +1,27 @@
 import { Component} from '@angular/core';
 import {YoutubeService} from '../../assets/services/youtube.service'
+import {DomSanitizer} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-youtube',
   templateUrl: './youtube.component.html',
   styleUrls: ['./youtube.component.scss']
 })
-export class YoutubeComponent  {
+export class YoutubeComponent {
+  id: string;
+  url: any;
+  baseUrl: string = 'https://www.youtube.com/embed/';
 
-  id = '';
-  private player;
-  private ytEvent;
+  constructor(private _youtubeService: YoutubeService, private sanitizer: DomSanitizer) {}
 
-  constructor(private _youtubeService: YoutubeService){}
-
-  getYoutTubeID(){
-    this._youtubeService.getYoutTubeID()
-      .subscribe(res => this.id = res.items[0].id.videoId)
+  getYoutTubeID(song) {
+    this._youtubeService.getYoutTubeID(song)
+      .subscribe(res => this.id = res.items[0].id.videoId);
+      this.url = this.sanitizer.bypassSecurityTrustResourceUrl(this.baseUrl + this.id);
   }
 
-  onStateChange(event) {
-    this.ytEvent = event.data;
-  }
-  savePlayer(player) {
-    this.player = player;
-  }
-
-
-  playVideo() {
-    this.player.playVideo();
-  }
-
-  pauseVideo() {
-    this.player.pauseVideo();
-  }
 
 }
+
+
+
