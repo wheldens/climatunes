@@ -28,20 +28,24 @@ export class MusicComponent implements OnChanges {
       .subscribe(res => this.songs = res.results.trackmatches.track);
   }
 
-  nextPage(){
+  nextPage() {
     this.page = this.page + 1;
     this.getSongs(this.page);
   }
 
-  previousPage(){
+  previousPage() {
     this.page = this.page - 1;
     this.getSongs(this.page);
   }
 
 
-  sendSong(song){
-    this.url_yt = this._youtubeServie.getYouTubeURL(song)
+  sendSong(song) {
+    this._youtubeServie.getYouTubeURL(song)
+      .subscribe(res => this.url_yt = 'http://www.youtube.com/embed/' +  res.items[0].id.videoId)
+    console.log(this.url_yt);
   }
+
+
 
 }
 

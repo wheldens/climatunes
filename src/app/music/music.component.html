@@ -35,7 +35,7 @@
           <a href="{{ song.url }}">
               {{ song.name | shorten:'25' }}
           </a>
-          <button (click)="sendSong('surf')">Watch video</button>
+          <button (click)="sendSong(song.name +  song.artist )">Watch video</button>
         </span>
       </li>
     </ul>
