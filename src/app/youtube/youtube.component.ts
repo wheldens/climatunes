@@ -1,5 +1,4 @@
 import {Component, Input, OnChanges, SimpleChanges,} from '@angular/core';
-import {DomSanitizer} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-youtube',
@@ -7,18 +6,31 @@ import {DomSanitizer} from '@angular/platform-browser';
   styleUrls: ['./youtube.component.scss']
 })
 export class YoutubeComponent implements OnChanges {
-  saveUrl: any;
-  @Input() url_yt;
-
-  constructor(private sanitizer: DomSanitizer) {
-  }
+  @Input() url_id;
+  player: YT.Player;
 
   ngOnChanges(changes: SimpleChanges) {
-    if (changes['url_yt']) {
-      this.saveUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.url_yt + '?autoplay=1');
+    if (changes['url_id']) {
+      if(this.player) { this.player.loadVideoById(this.url_id) }
+      }
     }
+
+  savePlayer(player) {
+    console.log(player);
+    this.player = player;
   }
 
+  onStateChange(event) {
+    console.log('player state', event.data);
+  }
+
+  playVideo() {
+    this.player.playVideo();
+  }
+
+  pauseVideo() {
+    this.player.pauseVideo();
+  }
 
 }
 

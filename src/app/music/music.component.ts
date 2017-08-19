@@ -13,8 +13,7 @@ import {forEach} from '@angular/router/src/utils/collection';
 export class MusicComponent implements OnChanges {
   songs;
   page: number = 1
-  url_yt;
-  plays: boolean;
+  url_id;
   @Input() data: Weather;
 
   constructor(private _musicService: MusicService, private _youtubeServie: YoutubeService) {
@@ -30,7 +29,6 @@ export class MusicComponent implements OnChanges {
     this._musicService.getSongs(this.data.weather, page)
       .subscribe(res => {
         this.songs = res.results.trackmatches.track;
-        console.log(res.results)
       })
   }
 
@@ -44,10 +42,9 @@ export class MusicComponent implements OnChanges {
     this.getSongs(this.page);
   }
 
-
   sendSong(song) {
     this._youtubeServie.getYouTubeList(song)
-      .subscribe(res => this.url_yt = 'http://www.youtube.com/embed/' + res.items[0].id.videoId);
+      .subscribe(res => this.url_id  = res.items[0].id.videoId);
   }
 
 }

@@ -1,16 +1,13 @@
-
 <div class="row">
   <div class="col-md-6">
-    <div *ngIf="!url_yt">
+    <div *ngIf="!url_id">
     <img src="../../assets/image/weatherMusic.jpg" width="100%" alt="">
     </div>
 
-    <div *ngIf="url_yt">
-      <app-youtube [url_yt]="url_yt"></app-youtube>
+    <div *ngIf="url_id">
+      <app-youtube [url_id]="url_id"></app-youtube>
     </div>
   </div>
-
-
 
   <div class="col-md-6">
     <ul class="songs effect1">

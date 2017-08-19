@@ -16,6 +16,7 @@ import {YoutubeComponent} from './youtube/youtube.component';
 import {YoutubeService} from '../assets/services/youtube.service';
 import {MapComponent} from './ui/map/map.component';
 import {HeaderComponent} from './components/header/header.component';
+import { YoutubePlayerModule } from 'ng2-youtube-player';
 
 @NgModule({
   declarations: [
@@ -27,12 +28,13 @@ import {HeaderComponent} from './components/header/header.component';
     ShortenPipe,
     YoutubeComponent,
     MapComponent,
-    HeaderComponent,
+    HeaderComponent
 
   ],
   imports: [
     BrowserModule,
-    HttpModule
+    HttpModule,
+    YoutubePlayerModule
   ],
   providers: [WeatherService, MusicService, YoutubeService],
   bootstrap: [AppComponent]
