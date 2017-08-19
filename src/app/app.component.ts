@@ -16,9 +16,9 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     const positionOptions = {
-      enableHighAccuracy: true,
-      timeout: 6000,
-      maximumAge: 1000
+      enableHighAccuracy: false,
+      // timeout: 15000,
+      // maximumAge: 15000
     };
 
     navigator.geolocation.getCurrentPosition((position) => this.geoSuccessHandler(position), this.geoErrorHandler, positionOptions);
@@ -26,11 +26,11 @@ export class AppComponent implements OnInit {
 
   // get geo location and set weather url
   geoSuccessHandler(position) {
-    console.log(position);
     const lat = position.coords.latitude;
     const lon = position.coords.longitude;
-    const url = 'http://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon +
-      '&APPID=475ae9def12f8247c9ec682413dd0bf8';
+    const url = 'http://api.openweathermap.org/data/2.5/weather?lat=50&lon=-90&APPID=475ae9def12f8247c9ec682413dd0bf8';
+    // const url = 'http://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon +
+    //   '&APPID=475ae9def12f8247c9ec682413dd0bf8';
     this.url = url;
     this.setData(this.url);
   };
@@ -43,9 +43,8 @@ export class AppComponent implements OnInit {
   setData(url) {
     this._weatherService.getData(url)
       .subscribe(res => {
-        console.log(res);
         this.data.title = res.name;
-        this.data.icon_link = '../assets/image/' + res.weather[0].icon + '.svg';
+        this.data.icon_link = '../assets/image/icons/' + res.weather[0].icon + '.png';
         this.data.weather = res.weather[0].main;
         this.data.temp = res.main.temp;
         this.data.lat = res.coord.lat;

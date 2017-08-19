@@ -1,31 +1,22 @@
-import {Component, OnChanges, SimpleChanges, Input} from '@angular/core';
-import {YoutubeService} from '../../assets/services/youtube.service'
+import {Component, Input, OnInit} from '@angular/core';
 import {DomSanitizer} from '@angular/platform-browser';
+
 
 @Component({
   selector: 'app-youtube',
   templateUrl: './youtube.component.html',
   styleUrls: ['./youtube.component.scss']
 })
-export class YoutubeComponent implements OnChanges {
-  id: string;
-  url: any;
-  baseUrl: string = 'https://www.youtube.com/embed/';
-  @Input() songSearch;
+export class YoutubeComponent implements OnInit {
+  saveUrl: any;
+  @Input() url_yt;
 
-  constructor(private _youtubeService: YoutubeService, private sanitizer: DomSanitizer) {
+  constructor(private sanitizer: DomSanitizer) {
   }
 
-  ngOnChanges(changes: SimpleChanges) {
-    if (changes['songSearch']) {
-      this.getYouTubeID(this.songSearch);
-    }
-  }
-
-  getYouTubeID(song) {
-    this._youtubeService.getYoutTubeID(song)
-      .subscribe(res => this.id = res.items[0].id.videoId);
-    this.url = this.sanitizer.bypassSecurityTrustResourceUrl(this.baseUrl + this.id);
+  ngOnInit() {
+    console.log(this.url_yt + 'youtube components on init URL_YT');
+    this.saveUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.url_yt);
   }
 
 
