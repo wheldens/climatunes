@@ -1,5 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
-
 @import "./assets/scss/variables";
 @import "./assets/scss/grid";
 
@@ -14,7 +13,7 @@
 }
 
 body {
-  background: #3C3B3F;  /* fallback for old browsers */
+  background: #3C3B3F; /* fallback for old browsers */
   background: linear-gradient(to bottom, #605C3C, #3C3B3F);
   background-image: url(/assets/image/music.jpg);
   background-size: cover;
@@ -26,7 +25,6 @@ header {
   margin-bottom: -38px;
 }
 
-
 .superscript {
   vertical-align: super;
   font-size: 0.6rem;
@@ -37,8 +35,8 @@ header {
 }
 
 .center {
-   text-align: center;
- }
+  text-align: center;
+}
 
 .right {
   text-align: right;
@@ -59,11 +57,10 @@ h1.center {
   left: 40%;
 }
 
-
 .loader {
   display: block;
   margin: 50px auto;
-  border: 10px solid  $bright-color;
+  border: 10px solid $bright-color;
   border-radius: 50%;
   border-top: 10px solid #fff8ed;
   border-bottom: 10px solid #fff8ed;
@@ -74,11 +71,24 @@ h1.center {
 }
 
 @-webkit-keyframes spin {
-  0% { -webkit-transform: rotate(0deg); }
-  100% { -webkit-transform: rotate(360deg); }
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+iframe {
+  width: 100% !important;
+  height: 600px;
 }

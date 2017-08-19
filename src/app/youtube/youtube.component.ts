@@ -11,7 +11,7 @@ export class YoutubeComponent implements OnChanges {
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes['url_id']) {
-      if(this.player) { this.player.loadVideoById(this.url_id) }
+      if(this.player) { this.player.loadVideoById(this.url_id,30 , "large") }
       }
     }
 
@@ -21,7 +21,7 @@ export class YoutubeComponent implements OnChanges {
   }
 
   onStateChange(event) {
-    console.log('player state', event.data);
+    console.log('player state', event);
   }
 
   playVideo() {
