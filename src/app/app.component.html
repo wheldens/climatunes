@@ -1,5 +1,11 @@
-<div class="wrapper">
-  <app-weather [data]="data"></app-weather>
+<div class="container">
+
+  <app-header [data]="data"></app-header>
+
+
+  <div *ngIf="data.weather==''">
+    <div class="loader"></div>
+  </div>
 
   <div *ngIf="data.weather!=''">
     <app-music [data]="data"></app-music>

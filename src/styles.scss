@@ -22,6 +22,11 @@ body {
   background-repeat: no-repeat;
 }
 
+header {
+  margin-bottom: -38px;
+}
+
+
 .superscript {
   vertical-align: super;
   font-size: 0.6rem;
@@ -41,20 +46,39 @@ body {
 
 button {
   padding: 5px;
-  background-color: #8b8b8b;
+  background-color: $panel-color-grey;
   border: none;
   &:hover {
     background-color: $bright-color;
   }
 }
 
-header {
-  margin-bottom: -38px;
-}
-
-
 h1.center {
   position: absolute;
   top: 200px;
   left: 40%;
+}
+
+
+.loader {
+  display: block;
+  margin: 50px auto;
+  border: 10px solid  $bright-color;
+  border-radius: 50%;
+  border-top: 10px solid #fff8ed;
+  border-bottom: 10px solid #fff8ed;
+  width: 50px;
+  height: 50px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }

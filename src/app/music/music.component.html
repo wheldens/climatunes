@@ -1,14 +1,25 @@
-<br><h1 class="center">SONGS</h1><br>
 
 <div class="row">
   <div class="col-md-6">
+    <div *ngIf="!url_yt">
+    <img src="../../assets/image/weatherMusic.jpg" width="100%" alt="">
+    </div>
+
     <div *ngIf="url_yt">
       <app-youtube [url_yt]="url_yt"></app-youtube>
     </div>
   </div>
 
+
+
+
+
   <div class="col-md-6">
     <ul class="songs effect1">
+
+
+
+
 
       <div class="row pagination">
         <button (click)="previousPage()"> <</button>
@@ -22,6 +33,7 @@
         <hr>
       </div>
 
+
       <li class="row" *ngFor="let song of songs">
         <div class="col-md-2"><img src="{{ song.image[1]['#text'] }}" alt=""></div>
 
@@ -34,7 +46,7 @@
         <span class="col-md-6">
           <a href="{{ song.url }}">
               {{ song.name | shorten:'25' }}
-          </a>
+          </a><br>
           <button (click)="sendSong(song.name +  song.artist )">Watch video</button>
         </span>
       </li>

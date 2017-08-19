@@ -1,10 +1,9 @@
+@import "../../styles";
 @import "../../assets/scss/variables";
 
+
 .container {
-  max-width: 800px;
-  margin: 0 auto;
   @include songsblur;
-  padding: 70px;
 }
 
 .songs {
@@ -45,3 +44,4 @@ hr {
   width: 34px;
   font-size: larger;
 }
+

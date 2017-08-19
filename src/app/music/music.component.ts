@@ -40,7 +40,7 @@ export class MusicComponent implements OnChanges {
 
 
   sendSong(song) {
-    this._youtubeServie.getYouTubeURL(song)
+    this._youtubeServie.getYouTubeList(song)
       .subscribe(res => this.url_yt = 'http://www.youtube.com/embed/' +  res.items[0].id.videoId)
     console.log(this.url_yt);
   }

@@ -6,11 +6,8 @@ export class YoutubeService {
 
   constructor(private _http: Http) {}
   BASE_URL: string = 'https://www.googleapis.com/youtube/v3/search'
-  youtubeId:string;
 
-
-  getYouTubeURL(song){
-
+  getYouTubeList(song){
     const dataToSend = {
       'maxResults': '1',
       'part': 'snippet',
@@ -19,7 +16,7 @@ export class YoutubeService {
       'key' : 'AIzaSyB0KpAJ7hB4WxKhEiDhHcelr-5Dr-IGaYs'
     };
 
-    return  this._http.get(this.BASE_URL , {params:dataToSend})
+    return this._http.get(this.BASE_URL , {params:dataToSend})
       .map(res => res.json())
   }
 }

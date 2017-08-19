@@ -7,8 +7,8 @@ export class WeatherService {
   data: Weather;
   constructor(private _http: Http) {}
 
-  getData(url: string) {
-    return this._http.get(url)
+  getData(weather_url: string) {
+    return this._http.get(weather_url)
       .map(res => this.data = res.json());
   }
 }

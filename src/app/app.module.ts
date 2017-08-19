@@ -14,6 +14,9 @@ import {ShortenPipe} from '../assets/pipes/shorten.pipe';
 
 import {YoutubeComponent} from './youtube/youtube.component';
 import {YoutubeService} from '../assets/services/youtube.service';
+import { MapComponent } from './ui/map/map.component';
+import { HeaderComponent } from './components/header/header.component';
+import { PaginationComponent } from './ui/pagination/pagination.component';
 
 
 @NgModule({
@@ -24,7 +27,10 @@ import {YoutubeService} from '../assets/services/youtube.service';
     TempPipe,
     ForCPipe,
     ShortenPipe,
-    YoutubeComponent
+    YoutubeComponent,
+    MapComponent,
+    HeaderComponent,
+    PaginationComponent
   ],
   imports: [
     BrowserModule,
