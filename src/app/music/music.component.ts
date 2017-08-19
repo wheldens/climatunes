@@ -2,6 +2,7 @@ import {Component, OnChanges, SimpleChanges, Input} from '@angular/core';
 import {MusicService} from '../../assets/services/music.service';
 import {YoutubeService} from '../../assets/services/youtube.service'
 import {Weather} from '../../assets/models/weather';
+import {forEach} from '@angular/router/src/utils/collection';
 
 
 @Component({
@@ -13,7 +14,7 @@ export class MusicComponent implements OnChanges {
   songs;
   page: number = 1
   url_yt;
-  openSearch:object
+  plays: boolean;
   @Input() data: Weather;
 
   constructor(private _musicService: MusicService, private _youtubeServie: YoutubeService) {
@@ -46,9 +47,8 @@ export class MusicComponent implements OnChanges {
 
   sendSong(song) {
     this._youtubeServie.getYouTubeList(song)
-      .subscribe(res => this.url_yt = 'http://www.youtube.com/embed/' + res.items[0].id.videoId)
+      .subscribe(res => this.url_yt = 'http://www.youtube.com/embed/' + res.items[0].id.videoId);
   }
-
 
 }
 

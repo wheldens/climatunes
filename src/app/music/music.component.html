@@ -26,7 +26,7 @@
         <span class="col-md-6">Song</span>
         <hr>
       </div>
-      
+
       <li class="row" *ngFor="let song of songs">
         <div class="col-md-2"><img src="{{ song.image[1]['#text'] }}" alt=""></div>
 
@@ -40,7 +40,7 @@
           <a href="{{ song.url }}">
               {{ song.name | shorten:'25' }}
           </a><br>
-          <button (click)="sendSong(song.name +  song.artist )">Watch video</button>
+          <button  (click)="sendSong(song.name +  song.artist )">Watch video</button>
         </span>
       </li>
     </ul>
