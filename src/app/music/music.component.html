@@ -12,14 +12,8 @@
 
 
 
-
-
   <div class="col-md-6">
     <ul class="songs effect1">
-
-
-
-
 
       <div class="row pagination">
         <button (click)="previousPage()"> <</button>
@@ -32,8 +26,7 @@
         <span class="col-md-6">Song</span>
         <hr>
       </div>
-
-
+      
       <li class="row" *ngFor="let song of songs">
         <div class="col-md-2"><img src="{{ song.image[1]['#text'] }}" alt=""></div>
 

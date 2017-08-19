@@ -3,6 +3,7 @@ import {MusicService} from '../../assets/services/music.service';
 import {YoutubeService} from '../../assets/services/youtube.service'
 import {Weather} from '../../assets/models/weather';
 
+
 @Component({
   selector: 'app-music',
   templateUrl: './music.component.html',
@@ -12,6 +13,7 @@ export class MusicComponent implements OnChanges {
   songs;
   page: number = 1
   url_yt;
+  openSearch:object
   @Input() data: Weather;
 
   constructor(private _musicService: MusicService, private _youtubeServie: YoutubeService) {
@@ -25,7 +27,10 @@ export class MusicComponent implements OnChanges {
 
   getSongs(page) {
     this._musicService.getSongs(this.data.weather, page)
-      .subscribe(res => this.songs = res.results.trackmatches.track);
+      .subscribe(res => {
+        this.songs = res.results.trackmatches.track;
+        console.log(res.results)
+      })
   }
 
   nextPage() {
@@ -41,10 +46,8 @@ export class MusicComponent implements OnChanges {
 
   sendSong(song) {
     this._youtubeServie.getYouTubeList(song)
-      .subscribe(res => this.url_yt = 'http://www.youtube.com/embed/' +  res.items[0].id.videoId)
-    console.log(this.url_yt);
+      .subscribe(res => this.url_yt = 'http://www.youtube.com/embed/' + res.items[0].id.videoId)
   }
-
 
 
 }
