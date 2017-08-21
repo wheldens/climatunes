@@ -7,17 +7,10 @@ import {YoutubeService} from '../../assets/services/youtube.service'
   templateUrl: './youtube.component.html',
   styleUrls: ['./youtube.component.scss']
 })
-export class YoutubeComponent implements OnChanges {
-  @Input() url_id;
+export class YoutubeComponent {
   @Output() state = new EventEmitter();
 
   constructor(public _youtubeService: YoutubeService){}
-
-  ngOnChanges(changes: SimpleChanges) {
-    if (changes['url_id']) {
-      this._youtubeService.loadVideo(this.url_id);
-    }
-  }
 
   // Output state of video 1: playing 2: pause 3: loading
   onStateChange(event) {

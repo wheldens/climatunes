@@ -1,8 +1,9 @@
 
 <youtube-player
-  [videoId]="url_id"
+  [videoId]="_youtubeService.getID()"
   (ready)="_youtubeService.savePlayer($event)"
   (change)="onStateChange($event)"
-></youtube-player><br><br>
+></youtube-player>
+
 
 
