@@ -1,4 +1,5 @@
 import {Component, Input, OnChanges, Output, EventEmitter, SimpleChanges,} from '@angular/core';
+import {YoutubeService} from '../../assets/services/youtube.service'
 
 
 @Component({
@@ -8,33 +9,21 @@ import {Component, Input, OnChanges, Output, EventEmitter, SimpleChanges,} from 
 })
 export class YoutubeComponent implements OnChanges {
   @Input() url_id;
-  player: YT.Player;
   @Output() state = new EventEmitter();
+
+  constructor(public _youtubeService: YoutubeService){}
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes['url_id']) {
-      if (this.player) {
-        this.player.loadVideoById(this.url_id, 0, "large")
-      }
+      this._youtubeService.loadVideo(this.url_id);
     }
   }
 
-  savePlayer(player) {
-    console.log(player);
-    this.player = player;
-  }
-
+  // Output state of video 1: playing 2: pause 3: loading
   onStateChange(event) {
     this.state.emit(event.data);
   }
 
-  playVideo() {
-    this.player.playVideo();
-  }
-
-  pauseVideo() {
-    this.player.pauseVideo();
-  }
 
 }
 

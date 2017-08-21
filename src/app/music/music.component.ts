@@ -18,7 +18,7 @@ export class MusicComponent implements OnChanges {
   playing: Song;
   @Input() data: Weather;
 
-  constructor(private _musicService: MusicService, private _youtubeServie: YoutubeService) {
+  constructor(private _musicService: MusicService, public _youtubeService: YoutubeService) {
   }
 
   ngOnChanges(changes: SimpleChanges) {
@@ -33,7 +33,6 @@ export class MusicComponent implements OnChanges {
         this.songs = res;
       })
   }
-
   nextPage() {
     this.page = this.page + 1;
     this.getSongs(this.page);
@@ -44,14 +43,19 @@ export class MusicComponent implements OnChanges {
     this.getSongs(this.page);
   }
 
+
+
   sendSong(song, item) {
     if(this.playing) {
       this.playing.play = false;
     }
     item.play = 'true';
     this.playing = item
-    this._youtubeServie.getYouTubeList(song)
-      .subscribe(res => this.url_id = res.items[0].id.videoId);
+    this._youtubeService.getYouTubeList(song)
+      .subscribe(   res => {
+        console.log(res);
+      this.url_id = res.items[0].id.videoId
+      })
   }
 
   stateLog(state) {
@@ -67,4 +71,8 @@ export class MusicComponent implements OnChanges {
         break;
     }
   }
+
+
+
+
 }
