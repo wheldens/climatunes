@@ -15,16 +15,18 @@ export class MusicService {
       .map(res => res.json())
       .map(res => res.results.trackmatches.track)
       .map((res: Array<any>) => {
-        let result: Array<Song> = [];
 
+        const result: Array<Song> = [];
         if (res) {
-          res.forEach( (item) => {
-            result.push( new Song(item.artist, item.name, item.url, item.image[2], item.image[0]  ));
+          res.forEach((item) => {
+            result.push(new Song(item.artist, item.name, item.url, item.image[2], item.image[1]));
           });
         }
         return result;
       })
-  }
-
+    }
 
 }
+
+
+

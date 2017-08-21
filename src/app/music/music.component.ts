@@ -2,6 +2,7 @@ import {Component, OnChanges, SimpleChanges, Input} from '@angular/core';
 import {MusicService} from '../../assets/services/music.service';
 import {YoutubeService} from '../../assets/services/youtube.service'
 import {Weather} from '../../assets/models/weather';
+import {Song} from '../../assets/models/song'
 
 
 @Component({
@@ -10,10 +11,11 @@ import {Weather} from '../../assets/models/weather';
   styleUrls: ['./music.component.scss']
 })
 export class MusicComponent implements OnChanges {
-  songs;
+  songs: Song[];
   page: number = 1
   url_id;
-  state;
+  state: string;
+  playing: Song;
   @Input() data: Weather;
 
   constructor(private _musicService: MusicService, private _youtubeServie: YoutubeService) {
@@ -28,7 +30,6 @@ export class MusicComponent implements OnChanges {
   getSongs(page) {
     this._musicService.getSongs(this.data.weather, page)
       .subscribe(res => {
-        console.log(res);
         this.songs = res;
       })
   }
@@ -43,17 +44,27 @@ export class MusicComponent implements OnChanges {
     this.getSongs(this.page);
   }
 
-  sendSong(song) {
+  sendSong(song, item) {
+    if(this.playing) {
+      this.playing.play = false;
+    }
+    item.play = 'true';
+    this.playing = item
     this._youtubeServie.getYouTubeList(song)
-      .subscribe(res => this.url_id  = res.items[0].id.videoId);
+      .subscribe(res => this.url_id = res.items[0].id.videoId);
   }
 
-  stateLog(target){
-    console.log(target);
-    this.state = target;
-
+  stateLog(state) {
+    switch (state) {
+      case 1:
+        this.state = 'Playing';
+        break;
+      case 2:
+        this.state = 'Pause';
+        break;
+      case 3:
+        this.state = 'Loading';
+        break;
+    }
   }
-
-
 }
-

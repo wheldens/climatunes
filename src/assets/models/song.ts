@@ -4,8 +4,8 @@ export class Song {
   public url : string;
   public imageSM : string;
   public imageLG : string;
-  public play : boolean = false;
-  public pause ?: number;
+  public play : boolean;
+  public pause : boolean;
 
   constructor(artist:string, name:string, url:string, imageLG:string, imageSM:string) {
     this.artist = artist;
