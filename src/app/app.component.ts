@@ -30,8 +30,7 @@ export class AppComponent implements OnInit {
     // const url = 'http://api.openweathermap.org/data/2.5/weather?lat=10&lon=60&APPID=475ae9def12f8247c9ec682413dd0bf8';
     const url = 'http://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon +
       '&APPID=475ae9def12f8247c9ec682413dd0bf8';
-    this.url = url;
-    this.setData(this.url);
+    this.setData(url);
   };
 
   geoErrorHandler(error) {
@@ -42,6 +41,7 @@ export class AppComponent implements OnInit {
   setData(weather_url) {
     this._weatherService.getData(weather_url)
       .subscribe(res => {
+        console.log(res);
         this.data.title = res.name;
         this.data.icon_link = '../assets/image/icons/' + res.weather[0].icon + '.png';
         this.data.weather = res.weather[0].main;

@@ -5,7 +5,9 @@
     </div>
 
     <div *ngIf="url_id">
-      <app-youtube [url_id]="url_id"></app-youtube>
+      <app-youtube
+        (state)="stateLog($event)"
+        [url_id]="url_id"></app-youtube>
     </div>
   </div>
 
@@ -24,24 +26,38 @@
         <hr>
       </div>
 
-      <li class="row" *ngFor="let song of songs">
-        <div class="col-md-2"><img src="{{ song.image[1]['#text'] }}" alt=""></div>
+      <li class="row" *ngFor="let item of songs">
 
-        <span class="col-md-4" *ngIf="song.artist">
-           <a href="{{ song.url }}">
-         {{song.artist | shorten:'25' }}
+        <h1 *ngIf="state == 2">Pause</h1>
+        <div class="col-md-2">
+          <img src="{{ item.imageSM['#text'] }}" alt="">
+        </div>
+
+        <span class="col-md-4" *ngIf="item.artist">
+           <a href="{{ item.url }}">
+         {{item.artist | shorten:'25' }}
            </a>
         </span>
 
         <span class="col-md-6">
-          <a href="{{ song.url }}">
-              {{ song.name | shorten:'25' }}
+          <a href="{{ item.url }}">
+              {{ item.track | shorten:'25' }}
           </a><br>
-          <button  (click)="sendSong(song.name +  song.artist )">Watch video</button>
+          <button  (click)="sendSong(item.artist + item.track )">Watch video</button>
         </span>
       </li>
+
+
+      <div class="row pagination">
+        <button (click)="previousPage()"> <</button>
+        <button (click)="nextPage()"> ></button>
+        <p class="page">Page: {{ page }}</p>
+      </div>
     </ul>
   </div>
 
 
 </div>
+
+
+

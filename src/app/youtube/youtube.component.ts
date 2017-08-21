@@ -1,4 +1,5 @@
-import {Component, Input, OnChanges, SimpleChanges,} from '@angular/core';
+import {Component, Input, OnChanges, Output, EventEmitter, SimpleChanges,} from '@angular/core';
+
 
 @Component({
   selector: 'app-youtube',
@@ -8,12 +9,15 @@ import {Component, Input, OnChanges, SimpleChanges,} from '@angular/core';
 export class YoutubeComponent implements OnChanges {
   @Input() url_id;
   player: YT.Player;
+  @Output() state = new EventEmitter();
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes['url_id']) {
-      if(this.player) { this.player.loadVideoById(this.url_id,30 , "large") }
+      if (this.player) {
+        this.player.loadVideoById(this.url_id, 0, "large")
       }
     }
+  }
 
   savePlayer(player) {
     console.log(player);
@@ -21,7 +25,7 @@ export class YoutubeComponent implements OnChanges {
   }
 
   onStateChange(event) {
-    console.log('player state', event);
+    this.state.emit(event.data);
   }
 
   playVideo() {

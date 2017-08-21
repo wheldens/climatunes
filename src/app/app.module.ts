@@ -16,7 +16,7 @@ import {YoutubeComponent} from './youtube/youtube.component';
 import {YoutubeService} from '../assets/services/youtube.service';
 import {MapComponent} from './ui/map/map.component';
 import {HeaderComponent} from './components/header/header.component';
-import { YoutubePlayerModule } from 'ng2-youtube-player';
+import {YoutubePlayerModule } from 'ng2-youtube-player';
 
 @NgModule({
   declarations: [
