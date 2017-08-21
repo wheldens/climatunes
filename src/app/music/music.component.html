@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-md-6">
     <div *ngIf="!url_id">
-    <img src="../../assets/image/weatherMusic.jpg" width="100%" alt="">
+      <img src="../../assets/image/weatherMusic.jpg" width="100%" alt="">
     </div>
 
 
@@ -10,8 +10,8 @@
         (state)="stateLog($event)"
         [url_id]="url_id"></app-youtube>
     </div>
-
   </div>
+
 
   <div class="col-md-6">
     <ul class="songs effect1">
@@ -44,8 +44,13 @@
           <a href="{{ item.url }}">
               {{ item.track | shorten:'25' }}
           </a><br>
-          <button  (click)="sendSong(item.artist + ' ' +item.track, item)">Watch video</button>
-          <span *ngIf="item.play">{{ state }}</span>
+          <button *ngIf="!item.play" (click)="sendSong(item.artist + ' ' +item.track, item)">Watch video</button>
+
+          <div *ngIf="item.play">
+              <span>{{ state }}</span>
+              <button type="button" class="btn btn-default" (click)="_youtubeService.playVideo()">Play</button>
+              <button type="button" class="btn btn-default" (click)="_youtubeService.pauseVideo()">Pause</button>
+          </div>
         </span>
       </li>
 

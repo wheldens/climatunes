@@ -1,12 +1,8 @@
 
 <youtube-player
   [videoId]="url_id"
-  (ready)="savePlayer($event)"
+  (ready)="_youtubeService.savePlayer($event)"
   (change)="onStateChange($event)"
 ></youtube-player><br><br>
-
-
-<button type="button" class="btn btn-default" (click)="playVideo()">Play</button>
-<button type="button" class="btn btn-default" (click)="pauseVideo()">Pause</button>
 
 
