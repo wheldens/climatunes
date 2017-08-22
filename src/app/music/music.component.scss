@@ -1,9 +1,10 @@
-@import "../../styles";
+//@import "../../styles";
+
 @import "../../assets/scss/variables";
 
 
 .container {
-  @include songsblur;
+  //@include songsblur;
 }
 
 .songs {
@@ -21,12 +22,12 @@
   li.row {
     margin-bottom: 10px;
   }
-
 }
 
-p.page {
+span.page {
   position: relative;
-  left: 10px;
+  margin: 0 20px;
+  display: block;
   top: 12px;
 }
 

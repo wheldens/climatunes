@@ -1,4 +1,4 @@
-$grid-gutter-width : 30;
+$grid-gutter-width : 30px;
 $grid-columns : 12;
 $grid-breakpoints:  (
   xs: 0,
@@ -30,7 +30,7 @@ $grid-breakpoints:  (
   @media (min-width: $breakpoint) {
 
     @for $i from 1 through $grid-columns {
-      .col-#{$size}-#{$i} {
+      .col--#{$size}-#{$i} {
         width: #{(100/$grid-columns) * $i + '%'};
       }
     }

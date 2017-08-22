@@ -1,29 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+@import "./assets/scss/normalize";
 @import "./assets/scss/variables";
 @import "./assets/scss/grid";
 
 * {
-  margin: 0;
-  padding: 0;
-  text-decoration: none;
-  list-style: none;
   box-sizing: border-box;
-  font-family: $font;
-  color: $primary-color;
 }
 
 body {
-  background: #3C3B3F; /* fallback for old browsers */
-  background: linear-gradient(to bottom, #605C3C, #3C3B3F);
   background-image: url(/assets/image/music.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  font-family: $font;
+  color: $primary-color;
 }
-
-header {
-  margin-bottom: -38px;
-}
+//
+//header {
+//  margin-bottom: -38px;
+//}
 
 .superscript {
   vertical-align: super;

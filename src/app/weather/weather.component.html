@@ -1,22 +1,19 @@
 
-
-
   <div class="row">
-
-    <div class="left col-sm-4">
+    <div class="left col col--md-4">
       <p class="section-title">Your location</p>
       <p>{{data.title}}</p>
       <p>{{data.lat}} <br> {{data.lon}}</p>
     </div>
 
-    <div class="center col-sm-4">
+    <div class="center col col--md-4">
       <h2>ClimaTunes</h2>
       <p class="current-song"></p>
       <img *ngIf="data.icon_link!=='' " src="{{ data.icon_link }}" alt="" width="100px">
       <h1>SONGS</h1>
     </div>
 
-    <div class="right col-sm-4">
+    <div class="right col col--md-4">
       <p class="section-title">Current weather</p>
       <p>{{ data.weather }}</p>
       <p *ngIf="data.icon_link!==''"> {{ data.temp | temp:'C'| number:'2.1-1' }} <span class="superscript">{{ ForC | ForC:'C' }}</span>

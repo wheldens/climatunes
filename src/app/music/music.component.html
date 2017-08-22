@@ -1,10 +1,11 @@
 <div class="row">
-  <div class="col-md-6">
+  <div class="col col--md-6">
 
     <div *ngIf="_youtubeService.getID() == ''">
-      <img src="../../assets/image/weatherMusic.jpg" width="100%" alt="">
+      <img class="effect3" src="../../assets/image/weatherMusic.jpg" width="100%" alt="">
     </div>
 
+    <!--Youtube iframe-->
     <div *ngIf="_youtubeService.getID() != '' ">
       <app-youtube
         (state)="_youtubeService.stateLog($event)"></app-youtube>
@@ -13,39 +14,51 @@
   </div>
 
 
-  <div class="col-md-6">
+  <div class="col col--md-6">
     <ul class="songs effect1">
 
-      <div class="row pagination">
-        <button (click)="previousPage()"> <</button>
-        <button (click)="nextPage()"> ></button>
-        <p class="page">Page: {{ page }}</p>
+      <div class="row">
+
+        <div class="col col--md-6">
+          <nav class="pagination">
+            <button (click)="previousPage()"> <</button>
+            <button (click)="nextPage()"> ></button>
+            <span>Page: {{ page }}</span>
+          </nav>
+        </div>
+
+        <div class="col col--md-6">
+          <input type="text">
+        </div>
+
       </div>
 
 
       <div class="row description">
-        <span class="col-md-6">Artist</span>
-        <span class="col-md-6">Song</span>
+        <span class="col col--md-6">Artist</span>
+        <span class="col col--md-6">Song</span>
         <hr>
       </div>
 
+
       <li class="row" *ngFor="let item of songs">
 
-        <div class="col-md-2">
+        <div class="col col--md-2">
           <img src="{{ item.imageSM['#text'] }}" alt="">
         </div>
 
-        <span class="col-md-4" *ngIf="item.artist">
+        <span class="col col--md-4" *ngIf="item.artist">
            <a href="{{ item.url }}">
          {{item.artist | shorten:'25' }}
            </a>
         </span>
 
-        <span class="col-md-6">
+        <span class="col col--md-6">
           <a href="{{ item.url }}">
               {{ item.track | shorten:'25' }}
           </a><br>
-          <button *ngIf="!item.play" (click)="_youtubeService.setSong(item.artist + ' ' +item.track, item)">Watch video</button>
+          <button *ngIf="!item.play"
+                  (click)="_youtubeService.setSong(item.artist + ' ' +item.track, item)">Watch video</button>
 
           <div *ngIf="item.play">
               <span>{{ _youtubeService.getState() }}</span>
@@ -62,7 +75,7 @@
       </div>
     </ul>
   </div>
-  
+
 </div>
 
 
