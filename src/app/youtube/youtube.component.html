@@ -1,9 +1,14 @@
 
-<youtube-player
+<youtube-player *ngIf="_youtubeService.getID() != '' "
   [videoId]="_youtubeService.getID()"
   (ready)="_youtubeService.savePlayer($event)"
   (change)="onStateChange($event)"
 ></youtube-player>
+
+
+
+
+
 
 
 

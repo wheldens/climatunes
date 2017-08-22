@@ -4,7 +4,7 @@
       <img class="effect3" src="../../assets/image/weatherMusic.jpg" width="100%" alt="">
     </div>
 
-    <!--Youtube iframe-->
+    <!--Youtube-->
     <div *ngIf="_youtubeService.getID() != '' ">
       <app-youtube
         (state)="_youtubeService.stateLog($event)"></app-youtube>
@@ -55,7 +55,7 @@
           </span><br>
 
           <button *ngIf="!item.play"
-                  (click)="_youtubeService.setSong(item.artist + ' ' +item.track, item)">Watch video
+                  (click)="_youtubeService.setSong(item.artist + ' ' +item.track, item)">Play
           </button>
 
           <div *ngIf="item.play">
