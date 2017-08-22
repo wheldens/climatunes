@@ -55,13 +55,13 @@
           </span><br>
 
           <button *ngIf="!item.play"
-                  (click)="_youtubeService.setSong(item.artist + ' ' +item.track, item)">Play
+                  (click)="_youtubeService.setSong(item.artist + ' ' +item.track, item)"><i class="fa fa-play"></i>
           </button>
 
           <div *ngIf="item.play">
             <span>{{ _youtubeService.getState() }}</span>
-            <button type="button" class="btn btn-default" (click)="_youtubeService.playVideo()">Play</button>
-            <button type="button" class="btn btn-default" (click)="_youtubeService.pauseVideo()">Pause</button>
+            <button #playButton type="button" class="btn btn-default" (click)="_youtubeService.playVideo(playButton)"><i class="fa fa-play"></i></button>
+            <button #pauseButton type="button" class="btn btn-default" (click)="_youtubeService.pauseVideo(pauseButton)"><i class="fa fa-pause"></i></button>
           </div>
         </div>
 

@@ -13,13 +13,15 @@
  }
 
 button {
-  color: $white-color;
-  padding: 5px;
+  color: $primary-color;
   border: none;
-  padding: 10px;
-  @extend .shadow;
-  background: $primary-color;
+  border: none;
+  border-radius: 10px;
+  padding: 4px 15px;
+  outline:0;
+  background: #e0e0e0;
   transition: background 0.3s;
+  @extend .shadow;
   &:hover {
     background: $bright-color;
   }

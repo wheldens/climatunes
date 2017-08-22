@@ -8,6 +8,8 @@ export class YoutubeService  {
   url_id :string = '';
   state: string;
   playing: Song;
+  playButton;
+  pauseButton;
 
   constructor(private _http: Http) {
   }
@@ -24,7 +26,6 @@ export class YoutubeService  {
 
 // search video based on song ( artist & track)
   setSong(song, item) {
-
     // set playing property
     if(this.playing) {
       this.playing.play = false;
@@ -64,11 +65,22 @@ export class YoutubeService  {
   }
 
 
-  playVideo() {
+
+  playVideo(btn) {
+    if(this.pauseButton){
+    this.pauseButton.style.opacity = 1;
+    }
+    this.playButton = btn;
+    btn.style.opacity = '0.5';
     this.player.playVideo();
   }
 
-  pauseVideo() {
+  pauseVideo(btn) {
+    if(this.playButton){
+    this.playButton.style.opacity = 1;
+    }
+    this.pauseButton = btn;
+    btn.style.opacity = '0.5';
     this.player.pauseVideo();
   }
 
