@@ -17,8 +17,6 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     const positionOptions = {
       enableHighAccuracy: false,
-      // timeout: 15000,
-      // maximumAge: 15000
     };
     navigator.geolocation.getCurrentPosition((position) => this.geoSuccessHandler(position), this.geoErrorHandler, positionOptions);
   }

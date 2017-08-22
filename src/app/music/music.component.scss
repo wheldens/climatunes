@@ -1,24 +1,4 @@
-//@import "../../styles";
-
 @import "../../assets/scss/variables";
-
-
-.songs {
-  font-size: $fontsize;
-  padding: 50px;
-  padding-bottom: 150px;
-  @include songsblur;
-  a {
-    color: #e1e1e1;
-    &:hover {
-      color: $bright-color;
-    }
-  }
-
-  li.row {
-    margin-bottom: 10px;
-  }
-}
 
 span.page {
   position: relative;
@@ -42,3 +22,13 @@ hr {
   font-size: larger;
 }
 
+.songs{
+  img {
+    display: block;
+    margin-right: 20px;
+  }
+
+  .row {
+    margin-bottom: 10px;
+  }
+}

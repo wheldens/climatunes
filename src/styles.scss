@@ -4,60 +4,35 @@
 @import "./assets/scss/mixins";
 @import "./assets/scss/grid";
 @import "./assets/scss/container";
+@import "./assets/scss/styling";
 
 * {
   box-sizing: border-box;
 }
 
 body {
-  background-image: url(/assets/image/music.jpg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   font-family: $font;
   color: $primary-color;
+  @extend .gradient-white;
 }
-//
-//header {
-//  margin-bottom: -38px;
-//}
 
 .superscript {
   vertical-align: super;
   font-size: 0.6rem;
 }
 
-.left {
-  text-align: left;
-}
 
-.center {
+.center{
   text-align: center;
 }
 
-.right {
-  text-align: right;
-}
 
-button {
-  padding: 5px;
-  background-color: $panel-color-grey;
-  border: none;
-  &:hover {
-    background-color: $bright-color;
-  }
-}
 
-h1.center {
-  position: absolute;
-  top: 200px;
-  left: 40%;
-}
 
 .loader {
   display: block;
   margin: 50px auto;
-  border: 10px solid $bright-color;
+  border: 10px solid $primary-color;
   border-radius: 50%;
   border-top: 10px solid #fff8ed;
   border-bottom: 10px solid #fff8ed;
@@ -85,7 +60,3 @@ h1.center {
   }
 }
 
-iframe {
-  width: 100% !important;
-  height: 600px;
-}

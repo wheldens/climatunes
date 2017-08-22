@@ -1,1 +1,9 @@
 @import "../../../assets/scss/variables";
+
+:host {
+  display: block;
+  color: $white-color;
+  background-color: $primary-color;
+  margin-bottom: 15px;
+
+}

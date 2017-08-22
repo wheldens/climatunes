@@ -1,6 +1,5 @@
 
 
-
 // Media queries
 @mixin breakpoint-up($size) {
   @media (min-width: map-get($grid-breakpoints, $size)) {
@@ -13,7 +12,6 @@
     @content;
   }
 }
-
 
 @mixin breakpoint-only($size) {
   @include breakpoint-up($size) {
