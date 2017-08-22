@@ -1,7 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 @import "./assets/scss/normalize";
 @import "./assets/scss/variables";
+@import "./assets/scss/mixins";
 @import "./assets/scss/grid";
+@import "./assets/scss/container";
 
 * {
   box-sizing: border-box;

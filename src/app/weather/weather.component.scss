@@ -1,4 +1,9 @@
 @import "../../assets/scss/variables";
+@import "../../assets/scss/mixins";
 
-.container {
+.current-weather {
+  text-align: center;
+  @include breakpoint-up(md) {
+    text-align: right;
+  }
 }

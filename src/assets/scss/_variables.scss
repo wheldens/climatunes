@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500');
 @import "./schaduw";
 
+/**
+ * Global
+ */
 $primary-color: #F5F5F5;
 $panel-color-grey: rgba(100, 100, 100, 0.51);
 $panel-color-lightgrey: rgba(100,100,100,0.3);
@@ -8,8 +11,6 @@ $panel-color-warm: rgba(164,148,112,0.3);
 $panel-color-cool: rgba(108,141,137,0.3);
 
 $bright-color: rgb(105, 238, 78);
-
-
 $panel-blur: blur(20px);
 $font: 'Montserrat', Helvetica, sans-serif;
 $fontsize: 18px;
@@ -35,3 +36,25 @@ $fontsize: 18px;
   background-color: $panel-color-lightgrey;
   backdrop-filter: $panel-blur;
 }
+/**
+ * Container
+ */
+$container-widths: (
+  sm: 400px,
+  md: 700px,
+  lg: 800px,
+  xl: 1000px
+);
+
+/**
+ * Grid
+ */
+$grid-gutter-width : 30px;
+$grid-columns : 12;
+$grid-breakpoints:  (
+  xs: 0,
+  sm: 540px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);

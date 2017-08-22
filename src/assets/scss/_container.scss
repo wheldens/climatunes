@@ -1,0 +1,11 @@
+.container {
+  margin: 0 auto;
+  padding: 0 15px;
+  max-width: 100%;
+
+  @each $size, $breakpoint in $grid-breakpoints {
+    @include breakpoint-up($size) {
+      width: map-get($container-widths, $size);
+    }
+  }
+}
