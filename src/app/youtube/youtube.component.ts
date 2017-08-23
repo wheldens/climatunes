@@ -1,4 +1,4 @@
-import {Component, Input, OnChanges, Output, EventEmitter, SimpleChanges,} from '@angular/core';
+import {Component, Output, EventEmitter} from '@angular/core';
 import {YoutubeService} from '../../assets/services/youtube.service'
 
 

@@ -13,24 +13,8 @@
 
 
   <div class="col col--lg-6">
-    <ul class="songs effect1">
-
-      <div class="row">
-
-        <div class="col col--lg-6">
-          <nav class="pagination">
-            <button (click)="previousPage()"> <</button>
-            <button (click)="nextPage()"> ></button>
-            <span>Page: {{ page }}</span>
-          </nav>
-        </div>
-
-        <div class="col col--lg-6">
-          <input type="text">
-        </div>
-
-      </div>
-
+    <ul class="songs">
+      <app-pagination (page)="getSongs($event)"></app-pagination>
 
       <div class="row description">
         <span class="col col--lg-6">Artist</span>
@@ -40,7 +24,6 @@
 
 
       <li class="row" *ngFor="let item of songs">
-
         <div class="col col--sm-2">
           <img src="{{ item.imageSM['#text'] }}" alt="">
         </div>
@@ -55,26 +38,24 @@
           </span><br>
 
           <button *ngIf="!item.play"
-                  (click)="_youtubeService.setSong(item.artist + ' ' +item.track, item)"><i class="fa fa-play"></i>
+                  (click)="_youtubeService.setSong(item.artist + ' ' +item.track, item)"><i class="fa fa-film"></i>
           </button>
 
           <div *ngIf="item.play">
             <span>{{ _youtubeService.getState() }}</span>
-            <button #playButton type="button" class="btn btn-default" (click)="_youtubeService.playVideo(playButton)"><i class="fa fa-play"></i></button>
-            <button #pauseButton type="button" class="btn btn-default" (click)="_youtubeService.pauseVideo(pauseButton)"><i class="fa fa-pause"></i></button>
-          </div>
+            <button #playButton type="button" class="btn btn-default" (click)="_youtubeService.playVideo(playButton)"><i
+              class="fa fa-play"></i></button>
+            <button #pauseButton type="button" class="btn btn-default"
+                    (click)="_youtubeService.pauseVideo(pauseButton)"><i class="fa fa-pause"></i></button>
+                  </div>
+
         </div>
-
       </li>
-
-      <div class="row pagination">
-        <button (click)="previousPage()"> <</button>
-        <button (click)="nextPage()"> ></button>
-        <p class="page">Page: {{ page }}</p>
-      </div>
+      <hr>
+      <app-pagination (page)="getSongs($event)"></app-pagination>
     </ul>
-  </div>
 
+  </div>
 </div>
 
 
