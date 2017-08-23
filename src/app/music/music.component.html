@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col col--lg-6">
+  <div class="col col--lg-5 youtube">
     <div *ngIf="_youtubeService.getID() == ''">
       <img class="effect3" src="../../assets/image/weatherMusic.jpg" width="100%" alt="">
     </div>
@@ -12,38 +12,40 @@
   </div>
 
 
-  <div class="col col--lg-6">
+  <div class="col col--lg-7">
     <ul class="songs">
       <app-pagination (page)="getSongs($event)"></app-pagination>
 
       <div class="row description">
-        <span class="col col--lg-6">Artist</span>
-        <span class="col col--lg-6">Song</span>
+        <span class="col col--xs-6">Artist</span>
+        <span class="col col--xs-6">Song</span>
       </div>
       <hr>
 
       <li class="row" *ngFor="let item of songs">
-        <div class="col col--sm-2">
-          <img src="{{ item.imageSM['#text'] }}" alt="">
+        <div class="col col--xs-12 col--sm-2">
+          <img class="artistIMG" src="{{ item.imageLG['#text'] }}" alt="">
         </div>
 
-        <span class="col col--sm-4" *ngIf="item.artist">
+        <span class="col col--xs-6 col--sm-4" *ngIf="item.artist">
          {{item.artist | shorten:'25'}}
         </span>
 
-        <div class="col col--sm-6">
+        <div class="col col--xs-6 col--sm-3">
           <span>
                 {{ item.track | shorten:'25' }}
           </span><br>
+        </div>
+
+        <div class="col col--xs-12 col--sm-3">
 
           <button *ngIf="!item.play"
                   (click)="_youtubeService.setSong(item.artist + ' ' +item.track, item)"><i class="fa fa-film"></i>
           </button>
 
-          <div *ngIf="item.play">
-            <span>{{ _youtubeService.getState() }}</span>
-
+          <ng-container *ngIf="item.play">
             <!-- play and pause buttons-->
+            <span class="buttons">
             <button [style.opacity]="_youtubeService.getOpacity('playButton')"
                     type="button" class="btn btn-default"
                     (click)="_youtubeService.playVideo()"><i class="fa fa-play"></i>
@@ -53,9 +55,12 @@
                     type="button" class="btn btn-default"
                     (click)="_youtubeService.pauseVideo()"><i class="fa fa-pause"></i>
             </button>
+            </span>
 
-          </div>
+            <span>{{ _youtubeService.getState() }}</span>
+          </ng-container>
         </div>
+        <hr>
       </li>
 
       <hr>

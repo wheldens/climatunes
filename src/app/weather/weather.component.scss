@@ -8,3 +8,9 @@
   }
 }
 
+.yourLocation {
+  text-align: center;
+  @include breakpoint-up(md) {
+    text-align: left;
+  }
+}
