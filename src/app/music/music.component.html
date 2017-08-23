@@ -19,9 +19,8 @@
       <div class="row description">
         <span class="col col--lg-6">Artist</span>
         <span class="col col--lg-6">Song</span>
-        <hr>
       </div>
-
+      <hr>
 
       <li class="row" *ngFor="let item of songs">
         <div class="col col--sm-2">
@@ -43,14 +42,22 @@
 
           <div *ngIf="item.play">
             <span>{{ _youtubeService.getState() }}</span>
-            <button #playButton type="button" class="btn btn-default" (click)="_youtubeService.playVideo(playButton)"><i
-              class="fa fa-play"></i></button>
-            <button #pauseButton type="button" class="btn btn-default"
-                    (click)="_youtubeService.pauseVideo(pauseButton)"><i class="fa fa-pause"></i></button>
-                  </div>
 
+            <!-- play and pause buttons-->
+            <button [style.opacity]="_youtubeService.getOpacity('playButton')"
+                    type="button" class="btn btn-default"
+                    (click)="_youtubeService.playVideo()"><i class="fa fa-play"></i>
+            </button>
+
+            <button [style.opacity]="_youtubeService.getOpacity('pauseButton')"
+                    type="button" class="btn btn-default"
+                    (click)="_youtubeService.pauseVideo()"><i class="fa fa-pause"></i>
+            </button>
+
+          </div>
         </div>
       </li>
+
       <hr>
       <app-pagination (page)="getSongs($event)"></app-pagination>
     </ul>

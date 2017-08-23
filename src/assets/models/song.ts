@@ -5,7 +5,6 @@ export class Song {
   public imageSM : string;
   public imageLG : string;
   public play : boolean;
-  public pause : boolean;
 
   constructor(artist:string, name:string, url:string, imageLG:string, imageSM:string) {
     this.artist = artist;
